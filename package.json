@@ -1,0 +1,14 @@
+{
+  "name": "auto-part-platform",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "shared/*"
+  ],
+  "scripts": {
+    "dev:customer": "npm run dev --workspace=apps/customer",
+    "dev:erp": "npm run dev --workspace=apps/erp",
+    "dev:admin": "npm run dev --workspace=apps/admin"
+  }
+}
