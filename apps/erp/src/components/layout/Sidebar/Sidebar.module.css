@@ -1,0 +1,260 @@
+/* ── Shell ──────────────────────────────────────────────────── */
+
+.sidebar {
+  width: var(--sidebar-width);
+  background-color: #ffffff;
+  border-right: 1px solid var(--border-default);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex-shrink: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-neutral-200) transparent;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 4px;
+}
+.sidebar::-webkit-scrollbar-thumb {
+  background: var(--color-neutral-200);
+  border-radius: 4px;
+}
+
+/* ── Brand ──────────────────────────────────────────────────── */
+
+.brand {
+  padding: 18px 16px 16px;
+  border-bottom: 1px solid var(--border-default);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.brandMark {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 800;
+  color: #fff;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.35);
+}
+
+.brandName {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-neutral-900);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.brandSub {
+  font-size: 10.5px;
+  color: var(--color-neutral-400);
+  margin-top: 1px;
+}
+
+/* ── Nav wrapper ─────────────────────────────────────────────── */
+
+.nav {
+  padding: 10px 8px 16px;
+  flex: 1;
+}
+
+.menuLabel {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-neutral-400);
+  padding: 6px 8px 4px;
+  margin-bottom: 2px;
+}
+
+/* ── Leaf nav item ───────────────────────────────────────────── */
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: var(--radius-md);
+  font-size: 13.5px;
+  font-weight: 400;
+  color: var(--color-neutral-600);
+  text-decoration: none;
+  transition: background-color 0.12s, color 0.12s;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  text-align: left;
+  margin-bottom: 1px;
+}
+
+.navItem:hover {
+  background-color: var(--color-neutral-50);
+  color: var(--color-neutral-900);
+}
+
+.navItemActive {
+  background-color: var(--color-primary-50);
+  color: var(--color-primary-700);
+  font-weight: 500;
+}
+
+.navItemActive:hover {
+  background-color: var(--color-primary-50);
+  color: var(--color-primary-700);
+}
+
+.navIcon {
+  flex-shrink: 0;
+  color: inherit;
+  opacity: 0.75;
+  display: flex;
+  align-items: center;
+}
+
+.navItemActive .navIcon {
+  opacity: 1;
+}
+
+.navLabel {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Section toggle button ───────────────────────────────────── */
+
+.sectionToggle {
+  /* same base as .navItem — just adds the chevron on the right */
+}
+
+.chevron {
+  flex-shrink: 0;
+  color: var(--color-neutral-400);
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s ease, color 0.12s;
+  transform: rotate(-90deg);   /* closed → points right */
+}
+
+.chevronOpen {
+  transform: rotate(0deg);     /* open → points down */
+}
+
+.navItemActive .chevron {
+  color: var(--color-primary-500);
+}
+
+/* ── Collapsible area ────────────────────────────────────────── */
+
+.sectionItems {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.22s ease;
+}
+
+.sectionItemsOpen {
+  grid-template-rows: 1fr;
+}
+
+.sectionItemsInner {
+  overflow: hidden;
+  padding: 0 0 4px 0;
+}
+
+/* ── Sub nav items (children) ────────────────────────────────── */
+
+.subNavItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 10px 7px 34px;   /* indented to sit under the icon */
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--color-neutral-500);
+  text-decoration: none;
+  transition: background-color 0.1s, color 0.1s;
+  margin-bottom: 1px;
+}
+
+.subNavItem:hover {
+  background-color: var(--color-neutral-50);
+  color: var(--color-neutral-800);
+}
+
+.subNavItemActive {
+  color: var(--color-primary-700);
+  background-color: var(--color-primary-50);
+  font-weight: 500;
+}
+
+.subNavItemActive:hover {
+  background-color: var(--color-primary-50);
+  color: var(--color-primary-700);
+}
+
+/* Dot indicator before each sub-item label */
+.subDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: currentColor;
+  flex-shrink: 0;
+  opacity: 0.4;
+  transition: opacity 0.12s;
+}
+
+.subNavItem:hover .subDot {
+  opacity: 0.7;
+}
+
+.subNavItemActive .subDot {
+  opacity: 1;
+  background-color: var(--color-primary-600);
+}
+
+/* ── Footer ──────────────────────────────────────────────────── */
+
+.footer {
+  padding: 12px 8px;
+  border-top: 1px solid var(--border-default);
+  flex-shrink: 0;
+}
+
+.logoutBtn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: var(--radius-md);
+  font-size: 13.5px;
+  font-weight: 400;
+  color: var(--color-neutral-500);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  text-align: left;
+  transition: background-color 0.12s, color 0.12s;
+}
+
+.logoutBtn:hover {
+  background-color: var(--color-error-50);
+  color: var(--color-error-600);
+}

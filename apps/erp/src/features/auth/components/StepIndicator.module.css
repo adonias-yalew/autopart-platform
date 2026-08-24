@@ -1,0 +1,76 @@
+.indicator {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  padding: 0 32px 24px;
+}
+
+.stepWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+  flex: 1;
+}
+
+.step {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid var(--border-strong);
+  background-color: var(--bg-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: border-color 0.15s, background-color 0.15s, color 0.15s;
+  position: relative;
+  z-index: 1;
+  cursor: default;
+}
+
+.step.active {
+  border-color: var(--color-brand);
+  background-color: var(--color-primary-50);
+  color: var(--color-brand);
+}
+
+.step.completed {
+  border-color: var(--color-success-600);
+  background-color: var(--color-success-600);
+  color: #fff;
+  cursor: pointer;
+}
+
+.number {
+  line-height: 1;
+}
+
+.label {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.labelActive {
+  color: var(--color-brand);
+}
+
+.connector {
+  position: absolute;
+  top: 15px;
+  left: calc(50% + 15px);
+  right: calc(-50% + 15px);
+  height: 2px;
+  background-color: var(--border-default);
+  z-index: 0;
+}
+
+.connectorDone {
+  background-color: var(--color-success-500);
+}

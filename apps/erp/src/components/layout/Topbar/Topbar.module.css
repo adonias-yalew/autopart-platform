@@ -1,0 +1,221 @@
+/* ── Shell ──────────────────────────────────────────────────── */
+
+.topbar {
+  height: 68px;
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--border-default);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  flex-shrink: 0;
+  gap: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+/* ── Left ────────────────────────────────────────────────────── */
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+  flex: 1;
+}
+
+.pageTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-neutral-900);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pageSub {
+  font-size: 12px;
+  color: var(--color-neutral-400);
+  margin-top: 1px;
+  font-weight: 400;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Right ───────────────────────────────────────────────────── */
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* ── Search ──────────────────────────────────────────────────── */
+
+.searchBox {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 11px;
+  color: var(--color-neutral-400);
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+.searchInput {
+  height: 38px;
+  width: 220px;
+  padding: 0 48px 0 34px;
+  border: 1.5px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-neutral-50);
+  font-size: 13.5px;
+  color: var(--color-neutral-900);
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s, width 0.25s ease, background-color 0.15s;
+  font-family: var(--font-sans);
+}
+
+.searchInput::placeholder {
+  color: var(--color-neutral-400);
+}
+
+.searchInput:focus {
+  border-color: var(--color-primary-400);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+  width: 300px;
+  background-color: #ffffff;
+}
+
+.searchKbd {
+  position: absolute;
+  right: 10px;
+  font-size: 10px;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  color: var(--color-neutral-400);
+  background-color: var(--color-neutral-100);
+  border: 1px solid var(--border-default);
+  border-radius: 4px;
+  padding: 2px 5px;
+  pointer-events: none;
+  transition: opacity 0.15s;
+}
+
+.searchInput:focus + .searchKbd,
+.searchInput:focus ~ .searchKbd {
+  opacity: 0;
+}
+
+/* ── Icon buttons ────────────────────────────────────────────── */
+
+.iconBtn {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-neutral-500);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.12s, color 0.12s;
+}
+
+.iconBtn:hover {
+  background-color: var(--color-neutral-100);
+  color: var(--color-neutral-800);
+}
+
+/* Red notification dot */
+.badge {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-error-500);
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+}
+
+/* ── Divider ─────────────────────────────────────────────────── */
+
+.divider {
+  width: 1px;
+  height: 24px;
+  background-color: var(--border-default);
+  margin: 0 4px;
+  flex-shrink: 0;
+}
+
+/* ── User button ─────────────────────────────────────────────── */
+
+.userBtn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 10px 5px 5px;
+  border-radius: var(--radius-lg);
+  border: 1.5px solid transparent;
+  background: none;
+  cursor: pointer;
+  transition: background-color 0.12s, border-color 0.12s;
+  font-family: var(--font-sans);
+}
+
+.userBtn:hover {
+  background-color: var(--color-neutral-50);
+  border-color: var(--border-default);
+}
+
+.avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary-500) 0%, #4f46e5 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+  flex-shrink: 0;
+  box-shadow: 0 1px 4px rgba(79, 70, 229, 0.35);
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1px;
+}
+
+.userName {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--color-neutral-800);
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
+.userRole {
+  font-size: 11px;
+  color: var(--color-neutral-400);
+  white-space: nowrap;
+  line-height: 1.2;
+}
+
+.userChevron {
+  color: var(--color-neutral-400);
+  flex-shrink: 0;
+}
